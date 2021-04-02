@@ -9,7 +9,7 @@
 
 <body>
     <header>
-        hkjjh
+        
     </header>
     <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
         More explanation in that CSS rule. -->
@@ -17,6 +17,7 @@
     <div id="cameraTwo" class= "cam">2</div>
     <div id="cameraThree" class="cam">3</div>
     <div id="cameraFour" class="cam">4</div>
+    <div id="topInfo" class="top">Top</div>
 
 
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
@@ -60,7 +61,7 @@
 
         <div id="drive-direction">
         <p id="drive-mode-readout">Drive Direction Undefined</p>
-        <img id ="drive-img" src="../images/darth_duck.png" style="width:100%;height:100%;">
+        <!--<img id ="drive-img" src="../images/darth_duck.png" style="width:100%;height:100%;"> -->
         </div>
         
         <!-- Autonomous selector -->
@@ -75,7 +76,7 @@
             <input id="arm-position" type="range" min="0" max="1200" value="770">
         </div> -->
         <div id="logo">
-            <svg id="robot-diagram" width="332" height="450">
+        <!--<svg id="robot-diagram" width="332" height="450">
                 <polygon points="70,390 300,390 300,200" class="triangle" />
                 <rect id="front-pistons" x="70" y="380" width="20" height="60"></rect>
                 <rect id="back-pistons" x="280" y="380" width="20" height="60"></rect>
@@ -84,11 +85,11 @@
                 <circle cx="250" cy="405" r="25"></circle>
                 <rect x="60" y="380" width="250" height="30"></rect>
                 <text id="team" x="185" y="405" text-anchor="middle">5902</text>
-            </svg>
+            </svg>   -->
          </div>
         <div id="logo">
-                <img src="../images/wireClippers.png" style="width:100%;height:100%;">
-         </div>
+            <img src="../images/wireClippers.png" style="width:100%;height:100%;">
+        </div>
     </aside>
     <div id="login">
         <input id="connect-address" type="text" value="localhost" disabled>
