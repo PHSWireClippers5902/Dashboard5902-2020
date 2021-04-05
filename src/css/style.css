@@ -8,23 +8,29 @@
 }
 /*hi*/
 body {
-    font: 16px sans-serif;
+    font: 16px 'Courier New', Courier;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: white;
     overflow: hidden;
     background: rgb(255, 255, 255);
 }
-button, input[type="text"], input[type="number"], .select-container, select {
+#body {
     color: white;
-    background: #444;
+}
+button, input[type="text"], input[type="number"], .select-container, select, #theme{
+    color: white;
+    background: #222;
     border: none;
     font-size: 14px;
     padding: 6px 8px;
     cursor: pointer;
     outline: 0;
+}
+#auto-select, #theme, #connect-button {
+    height: 28px;
+    font-family: 'Courier New', Courier;
 }
 .select-container {
     padding: 0;
@@ -48,17 +54,50 @@ body > * {
     padding: 10px;
     position: fixed;
     overflow: hidden;
-    background: #D3D3D3;
+    background: #2a2a2a;
 }
 #timer {
-    font-family: monospace;
+    font-family: 'Courier New', Courier;
     display: block;
     height: 10vh;
     width: 10vw;
     top: 0;
     left: 0;
-    font-size: 10vh;
+    font-size: 1000%;
     line-height: .8;
+    color: #ffffff;
+}
+#robot-connection {
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 39%;
+}
+#theme-holder {
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 31%;
+}
+#change-theme {
+    position: absolute;
+    display: block;
+    top: 110%;
+    left: 0;
+    font-family: 'Courier New', Courier;
+    width: 100%;
+}
+#theme-output {
+    position: absolute;
+    display: block;
+    top: 180%;
+    left: 0;
+}
+#drive-direction {
+    position: absolute;
+    display: block;
+    top: 45%;
+    left: 39%;
 }
 header {
     width: 20vw;
@@ -75,12 +114,13 @@ header {
     margin: auto 0;
     position: fixed;
     overflow: hidden;
-    background-size: contain;
+    background-size: contain; 
+    border: 2px solid #2a2a2a;
 }
 #cameraOne {
     bottom: 40%;
     left: 0%;
-    background-color: rgb(255 , 0 , 0);
+    background-color: rgb(200 , 200 , 200);
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
     background-image: url(http://frcvision.local:1181/stream.mjpg);
 }
@@ -88,16 +128,15 @@ header {
 #cameraTwo {
     left: 30%;
     bottom: 40%;
-    background-color: rgb(0 , 255, 0);
+    background-color: rgb(200 , 200, 200);
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
     background-image: url(http://frcvision.local:1181/stream.mjpg);
 }
 
 #cameraThree {
     bottom: 0%;
-    left: 0%; 
-    padding-left: 5%;
-    background-color: rgb(0 , 0 , 255);
+    left: 0%;
+    background-color: rgb(200 , 200 , 200);
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
     background-image: url(http://frcvision.local:1181/stream.mjpg);
 }
@@ -107,7 +146,7 @@ header {
     left: 30%;
     width: 30%;
     /* padding-left: 30; */
-    background-color: rgb(250, 26, 201);
+    background-color: rgb(200 , 200 , 200);
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
     background-image: url(http://frcvision.local:1181/stream.mjpg);
 }
@@ -115,7 +154,7 @@ header {
     width: 100%;
     height: 20%;
     background-repeat: no-repeat;
-    background-color: #D3D3D3;
+    background-color: #2a2a2a;
     position: absolute;
     left: 0%;
     top: 0%;
@@ -173,8 +212,8 @@ text {
 aside {
     right: 0;
     top: 0;
-    width: 33vw; /* started at 15 */
-    height: 100vh;
+    width: 40%; /* started at 15 */
+    height: 100%;
 }
 aside > * {
     margin-bottom: 20px;

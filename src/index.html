@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>FRC Dashboard</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="color-changer.js"></script>
 </head>
 
-<body>
+<body id="body">
     <header>
         
     </header>
@@ -17,7 +18,36 @@
     <div id="cameraTwo" class= "cam">2</div>
     <div id="cameraThree" class="cam">3</div>
     <div id="cameraFour" class="cam">4</div>
-    <div id="topInfo" class="top">Top</div>
+    <div id="topInfo" class="top">
+        <div id="timer">2:15</div>
+        <div id="theme-holder">
+            <div id="theme-readout">Color</div>
+            <select id="theme"> 
+                <option value="dark">White</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+            </select>
+            <button id="change-theme" type="button" onclick="myFunction()">Change</button>
+            <br>
+            <div id="theme-output"></div>
+        </div>
+        <!-- Tells whether robot is connected to dashboard. -->
+        <div id="robot-connection">
+            <div id="robot-state">Unknown state</div>
+            <button id="connect-button">Connect</button>
+        </div>
+        <div id="drive-direction">
+            <p id="drive-mode-readout">Drive Direction Undefined</p>
+        <!--<img id ="drive-img" src="../images/darth_duck.png" style="width:100%;height:100%;"> -->
+            <!-- Autonomous selector -->
+            <div class="select-container">
+                <select id="auto-select">
+                    <option>No auto modes found</option>
+                    <!-- This gets populated by JS -->
+                </select>
+            </div>
+        </div>
+    </div>
 
 
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
@@ -47,30 +77,12 @@
     </article>-->
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
     <aside>
-        <div id="timer">2:15</div>
-        
-        <!-- Tells whether robot is connected to dashboard. -->
-          <div id="robot-state">Unknown state</div>
-          <button id="connect-button">Connect</button>
-
         <!-- Example button which toggles /SmartDashboard/exampleValue NetworkTables value.
-            The <p> below then says the value. -->
+            The <p> below then says the value. 
         <div id="test-section">
             <p id="test-readout">Value is blank</p>
-        </div>
+        </div>  -->
 
-        <div id="drive-direction">
-        <p id="drive-mode-readout">Drive Direction Undefined</p>
-        <!--<img id ="drive-img" src="../images/darth_duck.png" style="width:100%;height:100%;"> -->
-        </div>
-        
-        <!-- Autonomous selector -->
-        <div class="select-container">
-            <select id="auto-select">
-                <option>No auto modes found</option>
-                <!-- This gets populated by JS -->
-            </select>
-        </div>
         <!-- <div>
             <p>Adjust arm height</p>
             <input id="arm-position" type="range" min="0" max="1200" value="770">
@@ -88,12 +100,12 @@
             </svg>   -->
          </div>
         <div id="logo">
-            <img src="../images/wireClippers.png" style="width:100%;height:100%;">
+            <!-- <img src="../images/wireClippers.png" style="width:100%;height:100%;"> -->
         </div>
     </aside>
     <div id="login">
         <input id="connect-address" type="text" value="localhost" disabled>
-        <button id="connect" disabled>Connecting</button>
+        <button class="button" id="connect" disabled>Connecting</button>
     </div> 
     <script src="networktables/networktables.js"></script>
     <script src="connection.js"></script>
